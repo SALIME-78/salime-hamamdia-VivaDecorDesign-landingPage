@@ -1,0 +1,1259 @@
+/* Global Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    overflow-x: hidden
+}
+
+/* --------------- Header Styles with its Media Queries --------------- */
+
+header {
+    margin: auto;
+    background-color: #fff;
+    width: 90%;
+    padding: 20px 0;
+    border: none
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: relative; */
+}
+
+header .logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #000;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+header li a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.sign-up {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 2px 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+@media (max-width: 800px) {
+
+    header {
+        position: relative
+    }
+
+    header .logo-container {
+        position: absolute;
+        top: 20px;
+        left: 0;
+    }
+
+    .nav-links {
+        display: none;
+        margin-top: 50px;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        position: relative
+    }
+
+    .nav-links.active {
+        display: flex;
+        text-align: start;
+        padding: 7%;
+    }
+
+    .nav-links a {
+        font-size: 18px
+    }
+
+    .hamburger {
+        position: absolute;
+        top: 20px;
+        right: 0;
+        display: flex;
+    }
+
+    .sign-up {
+        display:none
+    }
+
+    /* .sign-up {
+        display: block;
+        width: 90%;
+        position: absolute;
+        bottom: -4%;
+        left: 7%
+    } */
+}
+
+@media (max-width: 620px) {
+    header {
+        margin-bottom: 30px
+    }
+
+}
+
+
+/* --------------- Hero Section Styles with its Media Queries --------------- */
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 4% auto 1% auto;
+    width: 90%;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 7rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #000;
+}
+
+.hero-content>p {
+    color: #555;
+    width: 70%;
+    line-height: 2rem;
+    font-size: 18px;
+    margin-top: 2.8rem
+}
+
+.start-project-btn {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+
+.hero-content {
+    width: 60%
+}
+
+.hero-image {
+    width: 35%;
+    height: 60vh;
+    text-align: end;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 1200px) {
+    .hero-content h1 {
+        font-size: 3.8rem
+    }
+
+    .hero-content>p {
+        width: 85%;
+        font-size: 18px;
+    }
+
+    .hero-image {
+        width: 47%;
+    }
+}
+
+
+@media (max-width: 1000px) {
+
+    .hero {
+        padding-left: 1rem;
+        padding-right: 0.9rem
+    }
+
+    .hero-content h1 {
+        font-size: 3.3rem;
+        margin-bottom: 0
+    }
+
+    .hero-content>p {
+        width: 87%;
+        font-size: 18px;
+        margin-top: 1.5rem;
+        line-height: 1.8rem
+    }
+
+    .hero-image {
+        width: 46%;
+    }
+
+
+}
+
+@media (max-width: 800px) {
+    .hero {
+        display: block;
+        background-image: url('images/Image 1.png');
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: cover;
+        width: 100%;
+        position: relative;
+        height: 550px
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 18%;
+        left: 8%;
+        padding-left: 1.5rem;
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        margin-bottom: 0;
+        font-size: 4rem;
+        z-index: 999
+    }
+
+    .hero-content p {
+        width: 70%;
+        font-size: 17px;
+        z-index: 999;
+        color: rgb(228, 228, 228)
+    }
+
+    .hero-image {
+        display: none
+    }
+}
+
+
+@media (max-width: 620px) {
+
+    .hero-content {
+        padding-left: 0
+    }
+
+    .hero-content {
+        justify-content: center;
+        margin: auto
+    }
+    .hero-content h1 {
+        font-size: 2.6rem
+    }
+
+    .hero-content>p {
+        text-align:justify;
+        width: 90%;
+    }
+}
+
+
+/* --------------- Statistics Section Styles with its Media Queries --------------- */
+
+.statistics-section {
+    margin: 2% auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 4rem
+}
+
+.stat-items {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem
+}
+
+.stat-item h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.start-project-btn {
+    margin-top: 0;
+    margin-bottom: 2rem
+}
+
+.stat-item p {
+    font-size: 14px;
+}
+
+.stats-image {
+    width: 50%;
+    text-align: end;
+    position: relative;
+    margin-right: 5%;
+    margin-top: 0
+}
+
+.stats-image::before {
+    content: "";
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    border: 1px solid #000;
+    top: -5%;
+    left: 7%;
+    z-index: -999
+}
+
+.stats-image img {
+    width: 90%;
+}
+
+.arrow-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ;
+    position: absolute;
+    bottom: 0.5%;
+    right: -6%;
+    height: 70px;
+    width: 70px;
+    z-index: 999;
+    background-color: #1f1f1f;
+    color: white
+}
+
+@media (max-width: 1000px) {
+    .statistics-section {
+        padding-left: 0.9rem;
+        padding-right: 0.9rem
+    }
+    .stat-item h2 {
+        font-size: 1.8rem
+    }
+
+    .stats-image {
+        width: 58%;
+        text-align: center;
+        margin: auto
+    }
+
+    .stats-image::before {
+        top: -3%;
+        left: 3%;
+    }
+
+    .arrow-bottom {
+        bottom: 0;
+        right: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .statistics-section {
+        margin-top: 4rem;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .start-project-btn {
+        margin-bottom: 0;
+        width: 100%;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .stat-items {
+        width: 100%;
+    }
+
+    .stats {
+        padding-bottom: 1rem
+    }
+
+    .stats-image {
+        width: 100%;
+        text-align: center;
+        margin: auto
+    }
+
+    .stats-image img {
+        width: 95%;
+    }
+
+    .stats-image::before {
+        left: -1%;
+    }
+
+    .arrow-bottom {
+        display: none
+    }
+}
+
+
+@media (max-width: 620px) {
+    .statistics-section {
+        margin-top: 4rem;
+        gap: 40px;
+    }
+
+}
+
+
+/* --------------- Services Section Styles with its Media Queries --------------- */
+
+.services-section {
+    width: 90%;
+    margin: 6rem auto;
+    font-family: Arial, sans-serif;
+}
+
+.services-section .services-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3%;
+}
+
+.services-section h2 {
+    display: inline-block;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 50px;
+    color: #1f1f1f;
+    font-size: 30px;
+}
+
+.service-section-title::before {
+    content: "";
+    width: 100px;
+    height: 3px;
+    background-color: #1f1f1f;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+
+}
+
+.service {
+    display: flex;
+    gap: 10px;
+    width: 30%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.service .design {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px
+}
+
+.service h3 {
+    color: #1f1f1f;
+    font-size: 22px;
+    margin-bottom: 20px;
+    vertical-align: center;
+}
+
+.service p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+@media (max-width: 1000px) {
+    .services-section {
+        padding-left: 0.9rem;
+        padding-right: 0.9rem
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .services-section {
+        width: 100%;
+        margin: 4rem 0 3rem 0;
+    }
+
+    .services-container {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem
+    }
+
+    .service-section-title {
+        width: 100%;
+        text-align: center;
+    }
+
+    .service-section-title::after {
+        content: "";
+        width: 100px;
+        height: 3px;
+        background-color: #1f1f1f;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 20px;
+    }
+
+    .service {
+        width: 100%;
+        text-align: center;
+        display: block;
+        margin-bottom: 3rem
+    }
+
+    .service p {
+        margin: auto;
+        width: 60%
+    }
+}
+
+
+@media (max-width: 620px) {
+
+    .service-section-title {
+        font-size: 25px !important
+    }
+
+    .service-section-title::before {
+        width: 50px !important
+    }
+    .service-section-title::after {
+        width: 50px !important
+    }
+
+}
+
+
+/* --------------- Interior Design Section Styles with its Media Queries --------------- */
+
+.interior-design-section {
+    width: 90%;
+    display: flex;
+    gap: 6%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.interior-design-image {
+    flex: 1;
+}
+
+.interior-design-image img {
+    width: 100%;
+    height: 90%;
+}
+
+.interior-design-content {
+    flex: 1;
+}
+
+.interior-design-title {
+    font-size: 2.5rem;
+}
+
+.interior-design-description {
+    margin-top: 40px;
+    line-height: 1.4;
+    color: #666;
+}
+
+.interior-design-service-item {
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.expand-icon {
+    display: inline-block;
+    font-size: 24px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.interior-design-cta-button {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 10px 20px;
+    background-color: #1f1f1f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 1000px) {
+
+    .interior-design-section {
+        padding: 0 0.9rem
+    }
+
+    .interior-design-title {
+        font-size: 1.6rem;
+    }
+
+    .interior-design-description {
+        margin-top: 20px;
+        font-size: 15px
+    }
+
+    .interior-design-service-item {
+        margin: 20px 0
+    }
+
+    .interior-design-cta-button {
+        margin-top: 0;
+    }
+
+}
+
+@media (max-width: 800px) {
+    .interior-design-section {
+        flex-direction: column;
+    }
+
+    .interior-design-content {
+        padding: 20px;
+    }
+
+}
+
+@media (max-width: 620px) {
+
+    .interior-design-image {
+        width: 100%;
+    }
+    .interior-design-image img {
+        width: 100%;
+        height: 100%;
+    }
+    .interior-design-title {
+        font-size: 22px;
+        margin-top: 25px
+    }
+
+    .process-container {
+        align-items: center
+    }
+
+    .step-icon {
+        width: 40px !important;
+        height: 40px !important
+    }
+
+    .process-step {
+        gap: 20px !important
+    }
+
+    .interior-design-cta-button{
+        width: 100%;
+        text-align: center;
+        font-weight: 600;
+    }
+}
+
+/* --------------- Process Section Styles with its Media Queries --------------- */
+
+.process-section {
+    width: 90%;
+    max-height: 551px;
+    margin: 5rem auto;
+    display: flex
+}
+
+.process-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.process-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.process-steps {
+    width: 50%;
+}
+
+.process-step {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.step-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.step-icon i {
+    color: #fff;
+    font-size: 20px;
+}
+
+.process-step-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.process-step h3 {
+    font-size: 20px;
+    padding-top: 10px;
+    margin-bottom: 15px
+}
+
+.process-step p {
+    font-size: 17px;
+    line-height: 1.5;
+    color: #666;
+}
+
+.process-image {
+    width: 45%;
+    height: 100%;
+}
+
+.process-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 1000px) {
+    .process-section {
+        padding: 0 0.9rem
+    }
+
+    .process-title {
+        font-size: 28px
+    }
+
+    .process-steps {
+        width: 48%
+    }
+
+    .process-step {
+        gap: 12px;
+        margin-bottom: 15px
+    }
+
+    .process-step p {
+        font-size: 15px
+    }
+
+    .process-image {
+        width: 48%
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .process-section{
+        margin-bottom: 0
+    } 
+    .process-container {
+        flex-direction: column;
+    }
+
+    .process-steps,
+    .process-image {
+        width: 100%;
+    }
+
+    .process-image {
+        margin-top: 30px;
+    }
+
+    .process-title {
+        font-size: 28px;
+    }
+
+    .process-step h3 {
+        font-size: 18px;
+    }
+
+    .process-step p {
+        font-size: 14px;
+    }
+
+    .process-image {
+        display: none
+    }
+}
+
+/* --------------- Testimonials Section Styles with its Media Query --------------- */
+
+.testimonials-section {
+    width: 90%;
+    max-height: 580px;
+    margin-top: 0;
+    display: flex;
+    gap: 4%;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 8rem;
+    position: relative
+}
+
+.testimonials-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.image-slider {
+    position: relative;
+    width: 50%
+}
+
+.image-slider img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.slider-controls {
+    width: 35%;
+    height: 15%;
+    position: absolute;
+    background-color: white;
+    left: 0;
+    bottom: -5px;
+    border: none;
+    display: flex;
+    gap: 50px
+}
+
+.slider-controls button {
+    background-color: white;
+    color: rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 0px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.prev img,
+.next img {
+    width: 20px;
+    height: 20px;
+}
+
+.testimonials-cotent {
+    width: 50%;
+}
+
+.testimonials {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 83.4%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    z-index: 999
+}
+
+.testimonial {
+    height: 67.3%;
+    background-color: #333;
+    color: white;
+    padding: 40px;
+    margin-bottom: 2%;
+}
+
+.review {
+    font-style: italic;
+    color: white;
+    margin-bottom: 40px
+}
+
+.author {
+    display: flex;
+    align-items: center;
+}
+
+.author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.author-info .name {
+    font-weight: bold;
+    color: white;
+    margin: 0;
+}
+
+.author-info .location {
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #929292;
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 1200px) {
+    .testimonials {
+        width: 85%
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    .testimonials-section h2 {
+        font-size: 33px
+    }
+
+    .slider-controls button {
+        padding: 0 5px
+    }
+
+    .testimonial {
+        padding: 25px
+    }
+
+    .testimonial svg {
+        width: 42px;
+        height: 42px
+    }
+
+    .review {
+        font-size: 14px;
+        margin-bottom: 30px
+    }
+
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .testimonials-section {
+        margin-top: 1.6rem;
+        margin-bottom: 4rem;
+        position: static;
+        height: auto
+    }
+
+    .testimonial-content {
+        width: 100%;
+    }
+    .testimonials {
+        position: static;
+        flex-direction: column;
+        margin: auto
+    }
+    .testimonial {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    } 
+    
+    .image-slider {
+        display: none
+    }
+
+    .testimonials-section h2 {
+        text-align: center;
+        margin-bottom: 30px
+    }
+}
+
+
+@media screen and (max-width: 620px) {
+
+    .testimonials {
+        width: 90%
+    }
+    .testimonials-section h2 {
+        font-size: 26px
+    }
+
+
+}
+
+
+/* --------------- Newsletter Section Styles with its Media Queries --------------- */
+
+.newsletter-section {
+    margin: 50px 0;
+    background-color: white;
+    text-align: center;
+    width: 36%;
+    padding: 0 25px 25px 25px;
+    height: 300px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative
+}
+
+.newsletter-section h3 {
+    font-size: 26px;
+    color: #333;
+}
+
+.newsletter-content {
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    width: 100%;
+    text-align: center;
+    padding: 0 25px 25px 25px;
+    position: absolute;
+    bottom: -45px;
+    left: 0;
+
+}
+
+.newsletter-content p {
+    font-size: 14px;
+    color: #666;
+    margin: 40px 0;
+}
+
+.newsletter-content form {
+    position: relative
+}
+
+.newsletter-content form input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.newsletter-content form input[type="email"]:focus {
+    outline: 1px solid #ccc;
+}
+
+.newsletter-content button {
+    padding: 0px 5%;
+    background-color: #1f1f1f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.newsletter-content button:hover {
+    background-color: #292929;
+}
+
+@media screen and (max-width: 1000px) {
+    .newsletter-section {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .newsletter-section {
+        margin-top: 4rem;
+        width: 90%;
+    }
+
+    .newsletter-section p {
+        font-size: 18px;
+        padding: 0 50px
+    }
+
+    .newsletter-section form {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 620px) {
+
+    .newsletter-section h3{
+        font-size: 24px;
+    }
+    .newsletter-section p {
+        font-size: 16px;
+        padding: 0 20px;
+        margin-top: 20px
+    }
+}
+
+/* --------------- Footer Styles with its Media Queries --------------- */
+
+.footer {
+    width: 100%;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 4.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer-column {
+    padding-left: 50px;
+    width: 25%;
+}
+
+.logo {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    color: white
+}
+
+.social-icon {
+    margin-right: 10px;
+    text-decoration: none;
+    color: black
+}
+
+.footer .footer-column h4 {
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.footer .footer-column ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+}
+
+footer ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #D1D1D1;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .footer {
+        justify-content: space-evenly;
+        padding: 4.5rem 3.5rem
+    }
+
+    .footer-column-1 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+
+    }
+
+    .footer-column {
+        padding-left: 0
+    }
+
+    .footer .logo {
+        margin-bottom: 0
+    }
+
+    .tagline {
+        font-size: 15px;
+        text-align: center;
+        padding: 0 30px
+    }
+}
+
+@media screen and (max-width: 620px) {
+
+    .footer-column-2,
+    .footer-column-3,
+    .footer-column-4 {
+        width: 47%;
+        padding-bottom: 25px;
+        text-align: center
+    }
+}
